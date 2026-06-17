@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Вводный инструктаж</title>
+  <style>
+    :root {
+      --navy: #122c44;
+      --teal: #1b797b;
+      --gold: #d59937;
+      --paper: #f7faf7;
+      --line: #dbe4e1;
+      --muted: #64737c;
+      --danger: #b84a40;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        linear-gradient(125deg, rgba(27, 121, 123, .12), transparent 34%),
+        linear-gradient(25deg, rgba(213, 153, 55, .14), transparent 36%),
+        var(--paper);
+      color: #1e2b34;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .rail {
+      position: fixed;
+      inset: 0 auto 0 0;
+      width: 44px;
+      background: linear-gradient(90deg, var(--teal) 0 34px, var(--gold) 34px 44px);
+    }
+
+    main {
+      width: min(1120px, calc(100vw - 72px));
+      margin: 0 auto;
+      padding: 48px 0 56px 24px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      align-items: flex-start;
+      margin-bottom: 36px;
+    }
+
+    .kicker {
+      color: var(--muted);
+      font-size: 18px;
+      margin-bottom: 6px;
+    }
+
+    h1 {
+      margin: 0;
+      color: var(--navy);
+      font-size: 42px;
+      line-height: 1.1;
+      letter-spacing: 0;
+    }
+
+    .badge {
+      border: 1px solid rgba(27, 121, 123, .28);
+      color: var(--teal);
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 16px;
+      white-space: nowrap;
+      background: rgba(255, 255, 255, .55);
+    }
+
+    .panel {
+      background: rgba(255, 255, 255, .82);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 28px;
+      box-shadow: 0 18px 50px rgba(18, 44, 68, .08);
+    }
+
+    label {
+      display: block;
+      color: var(--navy);
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    input {
+      width: 100%;
+      border: 1px solid #b8c7c3;
+      border-radius: 8px;
+      padding: 15px 16px;
+      font-size: 20px;
+      background: #fff;
+      color: #1e2b34;
+    }
+
+    input:focus {
+      outline: 3px solid rgba(27, 121, 123, .18);
+      border-color: var(--teal);
+    }
+
+    button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      border: 0;
+      border-radius: 8px;
+      padding: 0 18px;
+      color: #fff;
+      background: var(--teal);
+      font-size: 17px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    button:disabled {
+      cursor: not-allowed;
+      background: #97aaa6;
+    }
+
+    .row {
+      display: flex;
+      gap: 12px;
+      align-items: flex-end;
+      margin-top: 18px;
+    }
+
+    .grow { flex: 1; }
+
+    .hint {
+      color: var(--muted);
+      font-size: 15px;
+      margin-top: 12px;
+      line-height: 1.45;
+    }
+
+    .error {
+      color: var(--danger);
+      font-size: 15px;
+      min-height: 20px;
+      margin-top: 10px;
+    }
+
+    .hidden { display: none; }
+
+    .video-wrap {
+      margin-top: 24px;
+    }
+
+    video {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #0e1b25;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+    }
+
+    .status {
+      margin-top: 14px;
+      min-height: 24px;
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    .progress {
+      margin-top: 14px;
+      height: 10px;
+      border-radius: 999px;
+      background: #dbe4e1;
+      overflow: hidden;
+    }
+
+    .progress > div {
+      width: 0;
+      height: 100%;
+      background: var(--gold);
+      transition: width .25s ease;
+    }
+
+    footer {
+      margin-top: 32px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 720px) {
+      main {
+        width: calc(100vw - 56px);
+        padding: 28px 0 40px 16px;
+      }
+
+      header {
+        display: block;
+      }
+
+      h1 {
+        font-size: 30px;
+      }
+
+      .badge {
+        display: inline-block;
+        margin-top: 14px;
+      }
+
+      .panel {
+        padding: 20px;
+      }
+
+      .row {
+        display: block;
+      }
+
+      button {
+        width: 100%;
+        margin-top: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="rail"></div>
+  <main>
+    <header>
+      <div>
+        <div class="kicker">Для вновь принимаемых сотрудников</div>
+        <h1>Вводный инструктаж по охране труда и пожарной безопасности</h1>
+      </div>
+      <div class="badge">Фиксация в Google Sheets</div>
+    </header>
+
+    <section id="formPanel" class="panel">
+      <label for="fullName">Ф.И.О.</label>
+      <div class="row">
+        <div class="grow">
+          <input id="fullName" type="text" autocomplete="name" placeholder="Иванов Иван Иванович">
+        </div>
+        <button id="startBtn" type="button">Приступить к просмотру</button>
+      </div>
+      <div id="formError" class="error"></div>
+      <div class="hint">Введите фамилию, имя и отчество полностью. Запись о прохождении появится в журнале после завершения просмотра видео.</div>
+    </section>
+
+    <section id="videoPanel" class="panel video-wrap hidden">
+      <video id="video" controls playsinline preload="metadata">
+        <source src="vvodnyy_videoinstruktazh_universitet.mp4" type="video/mp4">
+      </video>
+      <div class="progress" aria-hidden="true"><div id="progressBar"></div></div>
+      <div id="status" class="status">Просмотрите видео до конца.</div>
+      <div class="hint">Для корректной фиксации не закрывайте страницу до сообщения о сохранении результата.</div>
+    </section>
+
+    <footer>
+      Автоматизированный вводный инструктаж для сотрудников университета.
+    </footer>
+  </main>
+
+  <script>
+    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxESGQ1oC_eu_UF1jQAzmoUZ_sTAi5NWlAbpFg46JYaQbOyuSpA_CozSlBHEGaSFpshlw/exec";
+    const VIDEO_DURATION_SECONDS = 197.53;
+
+    const fullName = document.getElementById("fullName");
+    const formPanel = document.getElementById("formPanel");
+    const videoPanel = document.getElementById("videoPanel");
+    const formError = document.getElementById("formError");
+    const startBtn = document.getElementById("startBtn");
+    const video = document.getElementById("video");
+    const statusEl = document.getElementById("status");
+    const progressBar = document.getElementById("progressBar");
+
+    let participant = "";
+    let startedAt = null;
+    let maxWatched = 0;
+    let lastAllowedTime = 0;
+    let submitted = false;
+
+    function cleanName(value) {
+      return value.replace(/\s+/g, " ").trim();
+    }
+
+    function setStatus(text) {
+      statusEl.textContent = text;
+    }
+
+    function validName(value) {
+      return cleanName(value).split(" ").length >= 2 && cleanName(value).length >= 5;
+    }
+
+    async function submitResult(status) {
+      if (submitted) return;
+      submitted = true;
+
+      const watchedSeconds = Math.round(maxWatched * 10) / 10;
+      const percent = Math.min(100, Math.round((watchedSeconds / VIDEO_DURATION_SECONDS) * 1000) / 10);
+      const payload = {
+        fullName: participant,
+        status,
+        startedAt,
+        finishedAt: new Date().toISOString(),
+        videoDurationSeconds: VIDEO_DURATION_SECONDS,
+        watchedSeconds,
+        watchedPercent: percent,
+        userAgent: navigator.userAgent,
+        pageUrl: location.href
+      };
+
+      if (!GOOGLE_SCRIPT_URL || GOOGLE_SCRIPT_URL.includes("PASTE_")) {
+        setStatus("Просмотр завершен. Не указан адрес Google Apps Script для записи в журнал.");
+        return;
+      }
+
+      try {
+        await fetch(GOOGLE_SCRIPT_URL, {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "text/plain;charset=utf-8" },
+          body: JSON.stringify(payload)
+        });
+        setStatus("Просмотр завершен. Результат отправлен в журнал.");
+      } catch (error) {
+        submitted = false;
+        setStatus("Просмотр завершен, но запись не отправилась. Обратитесь к ответственному за инструктаж.");
+      }
+    }
+
+    startBtn.addEventListener("click", () => {
+      const value = cleanName(fullName.value);
+      if (!validName(value)) {
+        formError.textContent = "Введите Ф.И.О. полностью.";
+        fullName.focus();
+        return;
+      }
+
+      participant = value;
+      startedAt = new Date().toISOString();
+      formError.textContent = "";
+      formPanel.classList.add("hidden");
+      videoPanel.classList.remove("hidden");
+      video.focus();
+      setStatus("Просмотрите видео до конца.");
+    });
+
+    video.addEventListener("timeupdate", () => {
+      maxWatched = Math.max(maxWatched, video.currentTime);
+      progressBar.style.width = `${Math.min(100, (maxWatched / VIDEO_DURATION_SECONDS) * 100)}%`;
+
+      if (!video.seeking && video.currentTime > lastAllowedTime) {
+        lastAllowedTime = video.currentTime + 1.25;
+      }
+    });
+
+    video.addEventListener("seeking", () => {
+      if (video.currentTime > lastAllowedTime + 2) {
+        video.currentTime = Math.max(0, lastAllowedTime);
+        setStatus("Перемотка вперед ограничена. Просмотрите инструктаж последовательно.");
+      }
+    });
+
+    video.addEventListener("ended", () => {
+      maxWatched = Math.max(maxWatched, VIDEO_DURATION_SECONDS);
+      progressBar.style.width = "100%";
+      setStatus("Сохраняю результат...");
+      submitResult("Просмотрено полностью");
+    });
+  </script>
+</body>
+</html>
